@@ -1,0 +1,34 @@
+﻿@model Vidly.ViewModels.AllMoviesViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h1>All Movies in Store:</h1>
+    @if (Model.Movies.Count == 0)
+    {
+        <p>nope</p>
+    }
+    else
+    {
+        foreach (var flick in Model.Movies)
+        {
+            <a href="/movies/details/@flick.Id"><p>@flick.Id : @flick.Name</p></a>
+        }
+    }
+</div>
+
+@* <h2>@Model.Movie.Name</h2> *@
+@* *@
+@* <ul> *@
+@*     @foreach(var customer in Model.Customers) *@
+@*     { *@
+@*         <li>@customer.Name</li> *@
+@*     } *@
+@* </ul> *@
+@* *@
+@* *@
+@* <div class="jumbotron"> *@
+@*     <h2>jumbo tron</h2> *@
+@* </div> *@
